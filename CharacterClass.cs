@@ -11,7 +11,18 @@ namespace UO_Permits_Database
         public string? Template { get; set; } // (i.e Tankmage, blacksmith, bard).
         public Boolean? isRedNotBlue { get; set; } // True if red, false if blue.
 
-        public Character(string Name, Guild Guild, Permit[] Permits, string? template, bool? isRedNotBlue)
+        public Character(string Name)
+        { 
+            this.Name = Name; 
+        }
+
+        public Character(
+            string Name,
+            Guild Guild,
+            Permit[] Permits,
+            string? template,
+            bool? isRedNotBlue
+            )
         {
             this.Id = UtilityClass.createUUID();
             this.Name = Name;

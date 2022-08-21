@@ -34,5 +34,16 @@ public class MainMethod
             "UOR",
             DateOnly.Parse("06-16-2012") // Unconfirmed.
             );
+
+        Character Populus = new Character(
+            "Populus"
+            );
+
+        Guild cA = new Guild(
+            "chumbucket & Associates",
+            "cA"
+            );
+
+
     }
 }
