@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Reflection;
+
 namespace UO_Permits_Database;
 
 public class MainMethod
@@ -39,11 +41,29 @@ public class MainMethod
             "Populus"
             );
 
+        Character Loaf = new Character(
+            "Trolliosis"
+            );
+
+        Character Lelouche = new Character(
+            "rejected"
+            );
+
         Guild cA = new Guild(
             "chumbucket & Associates",
             "cA"
             );
 
+        Permit LoafTableBarrier = new Permit(
+            "Guildhouse Access",
+            "Loaf is allowed behind the table barrier under supervision by appropriate guards.",
+            Loaf,
+            Lelouche,
+            DateOnly.FromDateTime(DateTime.Now),
+            DateOnly.Parse("01-01-2023")
+            );
+
+        UtilityClass.getProps(LoafTableBarrier);
 
     }
 }
