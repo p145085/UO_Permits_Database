@@ -11,8 +11,9 @@ namespace UO_Permits_Database
         public string? ForumsURL { get; set; }
         public string? DiscordURL { get; set; }
         public string? ExpansionRuleset { get; set; } // (i.e "T2A", "UOR", "AoS").
+        public DateOnly? ShardLaunch { get; set; } // Date the server launched.
 
-        public Server(string Name, string Abbr, string WebURL, string ForumsURL, string DiscordURL, string ExpRules)
+        public Server(string Name, string Abbr, string WebURL, string ForumsURL, string DiscordURL, string ExpRules, DateOnly? shardLaunch)
         {
             this.Id = UtilityClass.createUUID();
             this.Name = Name;
@@ -20,6 +21,7 @@ namespace UO_Permits_Database
             this.WebsiteURL = WebURL;
             this.ForumsURL = ForumsURL;
             this.DiscordURL = DiscordURL;
+            this.ShardLaunch = shardLaunch;
         }
     }
 }

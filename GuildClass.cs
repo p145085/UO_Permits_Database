@@ -7,9 +7,9 @@ namespace UO_Permits_Database
         public string Id { get; set; }
         public string? Name { get; set; } // Name of Guild. (i.e "chumbucket & Associates").
         public string? Tag { get; set; } // Tag of Guild. (i.e "[cA]").
-        public Array? Members { get; set; } // Array of Players?
+        public Character[]? Members { get; set; } // Array of characters.
 
-        public Guild(string Name, string Tag, Array Members)
+        public Guild(string Name, string Tag, Character[] Members)
         {
             this.Id = UtilityClass.createUUID();
             this.Name = Name;

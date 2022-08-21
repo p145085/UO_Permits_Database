@@ -11,7 +11,8 @@ public class MainMethod
             "https://uosecondage.com",
             "https://forums.uosecondage.com/",
             "https://discord.gg/bub8b7vT",
-            "T2A"
+            "T2A",
+            DateOnly.Parse("01-01-2007") // Unconfirmed.
             );
 
         Server UOO = new Server(
@@ -20,7 +21,8 @@ public class MainMethod
             "https://uooutlands.com/",
             "https://forums.uooutlands.com/index.php",
             "https://discord.com/invite/M6pNQn2",
-            "Custom"
+            "Custom",
+            DateOnly.Parse("10-01-2018") // Unconfirmed.
             );
 
         Server UOR = new Server(
@@ -29,8 +31,8 @@ public class MainMethod
             "https://uorenaissance.com/",
             "https://uorforum.com/",
             "https://discord.com/invite/9JtUTdP",
-            "UOR"
+            "UOR",
+            DateOnly.Parse("06-16-2012") // Unconfirmed.
             );
-
     }
 }
