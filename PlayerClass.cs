@@ -9,9 +9,12 @@ namespace UO_Permits_Database
         public Guild? Guilds { get; set; } // Multiple guilds should be possible.
         public Permit? Permits { get; set; } // Multiple permits should be possible.
 
-        public Player()
+        public Player(Array Names, Guild Guilds, Permit Permits)
         {
             this.Id = UtilityClass.createUUID();
+            this.Names = Names;
+            this.Guilds = Guilds;
+            this.Permits = Permits;
         }
     }
 }

@@ -12,9 +12,19 @@ namespace UO_Permits_Database
         public DateTime PermitCreated { get; set; } = DateTime.Now; // Set to DateTime.Now;
         public DateTime PermitExpiration { get; set; } // Set to date of choice.
 
-        public Permit()
+        public Permit(
+            string Type,
+            string Description,
+            Player PermitHolder,
+            Player PermitIssuer,
+            DateTime PermitCreated,
+            DateTime PermitExpiration
+            )
         {
             this.Id = UtilityClass.createUUID();
+            this.Type = Type;
+            this.Description = Description;
+
         }
     }
 }

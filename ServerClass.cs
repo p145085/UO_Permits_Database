@@ -12,10 +12,14 @@ namespace UO_Permits_Database
         public string? DiscordURL { get; set; }
         public string? ExpansionRuleset { get; set; } // (i.e "T2A", "UOR", "AoS").
 
-        public Server()
+        public Server(string Name, string Abbr, string WebURL, string ForumsURL, string DiscordURL, string ExpRules)
         {
             this.Id = UtilityClass.createUUID();
-            
+            this.Name = Name;
+            this.Abbreviation = Abbr;
+            this.WebsiteURL = WebURL;
+            this.ForumsURL = ForumsURL;
+            this.DiscordURL = DiscordURL;
         }
     }
 }
