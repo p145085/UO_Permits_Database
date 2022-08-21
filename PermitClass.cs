@@ -4,7 +4,7 @@ namespace UO_Permits_Database
 {
     public class Permit
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string? Type { get; set; } // Issuer-written type of permit. (i.e "Sheep-shearing", "Farming in Deceit").
         public string? Description { get; set; } // Issuer-written message.
         public Player? PermitHolder { get; set; } // Single Player.
@@ -14,6 +14,7 @@ namespace UO_Permits_Database
 
         public Permit()
         {
+            this.Id = UtilityClass.createUUID();
         }
     }
 }

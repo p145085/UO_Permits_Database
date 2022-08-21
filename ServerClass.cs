@@ -4,7 +4,7 @@ namespace UO_Permits_Database
 {
     public class Server
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string? Name { get; set; } // (i.e "Ultima Online Second Age").
         public string? Abbreviation { get; set; } // (i.e "UOSA", "UOO", "UOF", "UOR").
         public string? WebsiteURL { get; set; }
@@ -14,6 +14,8 @@ namespace UO_Permits_Database
 
         public Server()
         {
+            this.Id = UtilityClass.createUUID();
+            
         }
     }
 }
