@@ -3,6 +3,9 @@ using System.Reflection;
 
 namespace UO_Permits_Database;
 
+// To-Do: 
+// Save objects in corresponding JSON files for persistent storage. Alternatively MySQL database. ("Why not both?"). Online and offline storage.
+// Webpage with login functionality for authorized associates to CRUD manage the database.
 public class MainMethod
 {
     static void Main(string[] args)
@@ -37,31 +40,36 @@ public class MainMethod
             DateOnly.Parse("06-16-2012") // Unconfirmed.
             );
 
-        Character Populus = new Character(
-            "Populus"
-            );
-
-        Character Loaf = new Character(
-            "Trolliosis"
-            );
-
-        Character Lelouche = new Character(
-            "rejected"
-            );
-
         Guild cA = new Guild(
             "chumbucket & Associates",
             "cA"
             );
 
+        Character Populus = new Character(
+            "Populus",
+            cA
+            );
+
+        Character Loaf = new Character(
+            "Trolliosis",
+            cA
+            );
+
+        Character Lelouche = new Character(
+            "rejected",
+            cA
+            );
+
         Permit LoafTableBarrier = new Permit(
             "Guildhouse Access",
-            "Loaf is allowed behind the table barrier under supervision by appropriate guards.",
+            "Loaf is allowed behind the table-barrier under supervision by appropriate guards.",
             Loaf,
             Lelouche,
-            DateOnly.FromDateTime(DateTime.Now),
+            DateOnly.Parse("08-22-2022"),
             DateOnly.Parse("01-01-2023")
             );
+
+
 
         UtilityClass.getProps(LoafTableBarrier);
 
