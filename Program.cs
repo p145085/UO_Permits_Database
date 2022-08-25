@@ -54,15 +54,12 @@ public class MainMethod
         foreach (Server server in allServers)
         {
             Console.WriteLine(server.ToString());
-        }
+            File.AppendAllText(@"C:\Users\emila\source\repos\UO_Permits_Database\servers.json", server.ToString());
 
-        foreach (Server server in allServers)
-        {
-            // Serialize to JSON. "Servers.json".
         }
-
         Console.WriteLine("End of Server.");
 
+        // End of Server.
 
         Guild cA = new Guild(
             "chumbucket & Associates",
@@ -75,20 +72,12 @@ public class MainMethod
         foreach (Guild guild in allGuilds)
         {
             Console.WriteLine(guild.ToString());
-        }
+            File.AppendAllText(@"C:\Users\emila\source\repos\UO_Permits_Database\guilds.json", guild.ToString());
 
-        foreach (Guild guild in allGuilds)
-        {
-            // Serialize to JSON. "Guilds.json".
         }
-
         Console.WriteLine("End of Guild.");
 
-
-
-
-
-
+        // End of Guild.
 
         Character Populus = new Character(
             "Populus",
@@ -113,14 +102,12 @@ public class MainMethod
         foreach (Character character in allCharacters)
         {
             Console.WriteLine(character.ToString());
-        }
+            File.AppendAllText(@"C:\Users\emila\source\repos\UO_Permits_Database\characters.json", character.ToString());
 
+        }
         Console.WriteLine("End of Character.");
 
-
-
-
-
+        // End of Character.
 
         Permit LoafTableBarrier = new Permit(
             "Guildhouse Access",
@@ -137,69 +124,12 @@ public class MainMethod
         foreach (Permit permit in allPermits)
         {
             Console.WriteLine(permit.ToString());
-        }
+            File.AppendAllText(@"C:\Users\emila\source\repos\UO_Permits_Database\permits.json", permit.ToString());
 
-        foreach (Permit permit in allPermits)
-        {
-            // Serialize to JSON. "Permits.json". 
         }
         Console.WriteLine("End of Permits.");
 
-
-
-
-        var options = new JsonSerializerOptions() { WriteIndented = true }; // Custom converter.
-        options.Converters.Add(new CustomDateTimeConverter("MM-dd-yyyy")); // Custom converter.
-        var jsonUOSA = JsonSerializer.Serialize(UOSA, options); // Custom converter.
-
-        var options2 = new JsonSerializerOptions() { WriteIndented = true }; // Custom converter.
-        options2.Converters.Add(new CustomDateTimeConverter("MM-dd-yyyy")); // Custom converter.
-        var jsonUOO = JsonSerializer.Serialize(UOO, options); // Custom converter.
-
-        var options3 = new JsonSerializerOptions() { WriteIndented = true }; // Custom converter.
-        options3.Converters.Add(new CustomDateTimeConverter("MM-dd-yyyy")); // Custom converter.
-        var jsonUOR = JsonSerializer.Serialize(UOR, options); // Custom converter.
-        //Console.WriteLine(json);
-
-        string folder = @"C:\Users\emila\source\repos\UO_Permits_Database\";
-        string fileNameUOSA = "jsonUOSA.txt";
-        string fullPathUOSA = folder + fileNameUOSA;
-
-        string fileNameUOO = "jsonUOO.txt";
-        string fullPathUOO = folder + fileNameUOO;
-
-        string fileNameUOR = "jsonUOR.txt";
-        string fullPathUOR = folder + fileNameUOR;
-
-        //File.WriteAllText(fullPathUOSA, jsonUOSA);
-        //File.WriteAllText(fullPathUOO, jsonUOO);
-        //File.WriteAllText(fullPathUOR, jsonUOR);
-
-        string a = SaveServer(@"C:\Users\emila\source\repos\UO_Permits_Database\", "jsonuosa.txt", UOSA);
-        string b = SaveServer(@"C:\Users\emila\source\repos\UO_Permits_Database\", "jsonuoo.txt", UOO);
-        string c = SaveServer(@"C:\Users\emila\source\repos\UO_Permits_Database\", "jsonuor.txt", UOR);
-
-
- 
+        // End of Permits.
 
     }
-
-    private static string SaveServer(string folder, string fileName, Server server)
-    {
-        string fullPath = folder + fileName;
-
-        var options = new JsonSerializerOptions() { WriteIndented = true }; // Custom converter.
-        options.Converters.Add(new CustomDateTimeConverter("MM-dd-yyyy")); // Custom converter.
-        var json = JsonSerializer.Serialize(server, options); // Custom converter.
-
-        File.WriteAllText(fullPath, json);
-
-        return json;
-    }
-
-
-
-
-
-
 }

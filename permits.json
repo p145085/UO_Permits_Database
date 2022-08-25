@@ -1,0 +1,27 @@
+ID: 867b8a79-ddc5-4331-8895-57c19da96c04
+Type: Guildhouse Access
+Description: Loaf is allowed behind the table-barrier under supervision by appropriate guards.
+PermitHolder: ID: 1d9830ee-1c16-4d40-bd2b-37da5ea0e13b
+Name: Trolliosis
+Guild: ID: 50c891bb-e598-4023-bcce-ff48dce0052e
+Name: chumbucket & Associates
+Tag: cA
+Members: 
+
+Permits: 
+Template: 
+isRedNotBlue: 
+
+PermitIssuer: ID: da2ecafe-75dd-4dce-bf7e-04b58d22b05b
+Name: rejected
+Guild: ID: 50c891bb-e598-4023-bcce-ff48dce0052e
+Name: chumbucket & Associates
+Tag: cA
+Members: 
+
+Permits: 
+Template: 
+isRedNotBlue: 
+
+PermitCreated: 2022-08-22
+PermitExpiration: 2023-01-01
