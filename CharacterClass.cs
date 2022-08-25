@@ -14,15 +14,18 @@ namespace UO_Permits_Database
 
         public Character(string Name)
         {
+            this.Id = UtilityClass.createUUID();
             this.Name = Name;
         }
         public Character(string Name, Guild Guild)
         {
+            this.Id = UtilityClass.createUUID();
             this.Name = Name;
             this.Guild = Guild;
         }
         public Character(string Name, Guild Guild, List<Permit> Permits)
         {
+            this.Id = UtilityClass.createUUID();
             this.Name = Name;
             this.Guild = Guild;
             this.Permits = Permits;
@@ -42,6 +45,16 @@ namespace UO_Permits_Database
             this.Permits = Permits;
             this.Template = template;
             this.isRedNotBlue = isRedNotBlue;
+        }
+
+        public override string ToString()
+        {
+            return "ID: " + this.Id + "\n"
+                    + "Name: " + this.Name + "\n"
+                    + "Guild: " + this.Guild + "\n"
+                    + "Permits: " + this.Permits + "\n"
+                    + "Template: " + this.Template + "\n"
+                    + "isRedNotBlue: " + this.isRedNotBlue + "\n";
         }
     }
 }

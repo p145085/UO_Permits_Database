@@ -1,0 +1,10 @@
+{
+  "Id": "0ad6423c-4fc6-466f-8621-54baf0800fb3",
+  "Name": "Ultima Online: Outlands",
+  "Abbreviation": "UOO",
+  "WebsiteURL": "https://uooutlands.com/",
+  "ForumsURL": "https://forums.uooutlands.com/index.php",
+  "DiscordURL": "https://discord.com/invite/M6pNQn2",
+  "ExpansionRuleset": null,
+  "ShardLaunch": "10-01-2018"
+}

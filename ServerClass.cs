@@ -23,5 +23,17 @@ namespace UO_Permits_Database
             this.DiscordURL = DiscordURL;
             this.ShardLaunch = shardLaunch;
         }
+
+        public override string ToString()
+        {
+            return "ID: " + this.Id + "\n"
+                    + "Name: " + this.Name + "\n"
+                    + "Abbreviation: " + this.Abbreviation + "\n"
+                    + "Website: " + this.WebsiteURL + "\n"
+                    + "Forums: " + this.ForumsURL + "\n"
+                    + "Discord: " + this.DiscordURL + "\n"
+                    + "ShardLaunch: " + this.ShardLaunch + "\n";
+        }
+
     }
 }

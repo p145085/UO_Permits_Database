@@ -23,5 +23,13 @@ namespace UO_Permits_Database
             this.Tag = Tag;
             this.Members = Members;
         }
+
+        public override string ToString()
+        {
+            return "ID: " + this.Id + "\n"
+                    + "Name: " + this.Name + "\n"
+                    + "Tag: " + this.Tag + "\n"
+                    + "Members: " + this.Members + "\n";
+        }
     }
 }

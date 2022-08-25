@@ -1,0 +1,10 @@
+{
+  "Id": "a4930f6d-ea4a-42fe-a0bc-89f788ee9e58",
+  "Name": "Ultima Online: Second Age",
+  "Abbreviation": "UOSA",
+  "WebsiteURL": "https://uosecondage.com",
+  "ForumsURL": "https://forums.uosecondage.com/",
+  "DiscordURL": "https://discord.gg/bub8b7vT",
+  "ExpansionRuleset": null,
+  "ShardLaunch": "01-01-2007"
+}

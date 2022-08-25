@@ -1,0 +1,10 @@
+{
+  "Id": "3f05e156-33a7-4d7f-af21-f42896adb648",
+  "Name": "Ultima Online: Renaissance",
+  "Abbreviation": "UOR",
+  "WebsiteURL": "https://uorenaissance.com/",
+  "ForumsURL": "https://uorforum.com/",
+  "DiscordURL": "https://discord.com/invite/9JtUTdP",
+  "ExpansionRuleset": null,
+  "ShardLaunch": "06-16-2012"
+}

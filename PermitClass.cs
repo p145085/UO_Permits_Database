@@ -28,7 +28,17 @@ namespace UO_Permits_Database
             this.PermitIssuer = PermitIssuer;
             this.PermitCreated = PermitCreated;
             this.PermitExpiration = PermitExpiration;
+        }
 
+        public override string ToString()
+        {
+            return "ID: " + this.Id + "\n"
+                    + "Type: " + this.Type + "\n"
+                    + "Description: " + this.Description + "\n"
+                    + "PermitHolder: " + this.PermitHolder + "\n"
+                    + "PermitIssuer: " + this.PermitIssuer + "\n"
+                    + "PermitCreated: " + this.PermitCreated + "\n"
+                    + "PermitExpiration: " + this.PermitExpiration + "\n";
         }
     }
 }
