@@ -7,24 +7,33 @@ namespace UO_Permits_Database
     public class Character
     {
         public string? Id { get; set; } // Identifier.
-        public string? Name { get; set; } // In-game identifier.
+        public List<string>? Name { get; set; } = new List<string>(); // In-game identifier.
         public Guild? Guild { get; set; } // In-game guild identifier.
         public List<Permit>? Permits { get; set; }
         public string? Template { get; set; } // (i.e Tankmage, blacksmith, bard).
         public Boolean? isRedNotBlue { get; set; } // True if red, false if blue.
 
-        public Character(string Name)
+        public Character()
+        {
+            this.Id = UtilityClass.createUUID();
+        }
+        public Character(Guild guild)
+        {
+            this.Id = UtilityClass.createUUID();
+            this.Guild = Guild;
+        }
+        public Character(List<string> Name)
         {
             this.Id = UtilityClass.createUUID();
             this.Name = Name;
         }
-        public Character(string Name, Guild Guild)
+        public Character(List<string> Name, Guild Guild)
         {
             this.Id = UtilityClass.createUUID();
             this.Name = Name;
             this.Guild = Guild;
         }
-        public Character(string Name, Guild Guild, List<Permit> Permits)
+        public Character(List<string> Name, Guild Guild, List<Permit> Permits)
         {
             this.Id = UtilityClass.createUUID();
             this.Name = Name;
@@ -33,7 +42,7 @@ namespace UO_Permits_Database
         }
 
         public Character(
-            string Name,
+            List<string> Name,
             Guild Guild,
             List<Permit> Permits,
             string? template,
@@ -57,13 +66,19 @@ namespace UO_Permits_Database
                     + "Template: " + this.Template + "\n"
                     + "isRedNotBlue: " + this.isRedNotBlue + "\n";
         }
-
-        static public void printAllChars(List<Character> allCharList)
+        static public void printAllCharacters(List<Character> allCharList)
+        { // Find a way to print the object name.
+            UtilityClass.getProps(allCharList[0]);
+        }
+        static public void printAllNicks(List<Character> allCharList)
         {
             Console.WriteLine("**Beginning output of list of all nicks.**");
             foreach (Character character in allCharList)
             {
-                Console.WriteLine(character.Name);
+                for (var i = 0; i < character.Name.Count; i++)
+                {
+                    Console.WriteLine(character.Name[i].ToString());
+                }
             }
             Console.WriteLine("**Finished outputting list of all nicks.**");
         }
@@ -78,18 +93,17 @@ namespace UO_Permits_Database
                 }
                 string url = MainMethod.fullPath + "characters.json";
                 string serialized = JsonConvert.SerializeObject(character, Formatting.Indented);
-                serialized = serialized + "\n";
 
                 //Console.WriteLine(guild.ToString());
 
                 if (!File.Exists(url)) // If file NOT found.
                 {
-                    Console.WriteLine("No previous file found, continuing with creation.");
+                    Console.WriteLine("First snapshot created at: " + DateTime.Now);
                     File.WriteAllText(url, serialized);
                 }
                 else if (File.Exists(url)) // If file found.
                 {
-                    Console.WriteLine("Previous file found, appending current data.");
+                    Console.WriteLine("Snapshot created at: " + DateTime.Now);
                     File.AppendAllText(url, serialized);
                 }
             }

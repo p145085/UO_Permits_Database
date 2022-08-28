@@ -42,6 +42,16 @@ namespace UO_Permits_Database
                     + "PermitExpiration: " + this.PermitExpiration + "\n";
         }
 
+        static public void printAllPermits(List<Permit> allPermitsList)
+        {
+            Console.WriteLine("**Beginning output of list of all permits.**");
+            foreach (Permit permit in allPermitsList)
+            {
+                Console.WriteLine(permit.Description);
+            }
+            Console.WriteLine("**Finished outputting list of all permits.**");
+        }
+
         static public void forEachPermit(List<Permit> allPermits)
         {
             foreach (Permit permit in allPermits)
@@ -52,18 +62,17 @@ namespace UO_Permits_Database
                 }
                 string url = MainMethod.fullPath + "permits.json";
                 string serialized = JsonConvert.SerializeObject(permit, Formatting.Indented);
-                serialized = serialized + "\n";
 
                 //Console.WriteLine(guild.ToString());
 
                 if (!File.Exists(url)) // If file NOT found.
                 {
-                    Console.WriteLine("No previous file found, continuing with creation.");
+                    Console.WriteLine("First snapshot created at: " + DateTime.Now);
                     File.WriteAllText(url, serialized);
                 }
                 else if (File.Exists(url)) // If file found.
                 {
-                    Console.WriteLine("Previous file found, appending current data.");
+                    Console.WriteLine("Snapshot created at: " + DateTime.Now);
                     File.AppendAllText(url, serialized);
                 }
             }

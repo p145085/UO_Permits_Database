@@ -16,7 +16,7 @@ namespace UO_Permits_Database;
 public class MainMethod
 {
     public const string fullPath = "C:\\Users\\emila\\source\\repos\\UO_Permits_Database\\";
-
+    
     static void Main(string[] args)
     {
         string fullPath = MainMethod.fullPath;
@@ -57,9 +57,8 @@ public class MainMethod
         allServers.Add(UOSA);
 
         Server.forEachServer(allServers);
-       
 
-        Console.WriteLine("End of Server.");
+        //Console.WriteLine("End of Server.");
 
         // End of Server.
 
@@ -67,11 +66,7 @@ public class MainMethod
             "chumbucket & Associates",
             "cA"
             );
-
-        Guild foo = new Guild(
-            "fooguild",
-            "foo"
-            );
+        Guild foo = new Guild();
 
         List<Guild> allGuilds = new List<Guild>();
         allGuilds.Add(cA);
@@ -79,33 +74,56 @@ public class MainMethod
 
         Guild.forEachGuild(allGuilds);
 
-        Console.WriteLine("End of Guild.");
+        //Console.WriteLine("End of Guild.");
 
         // End of Guild.
 
-        Character Populus = new Character(
-            "Populus",
-            cA
-            );
+        Character Populus = new Character();
+        Character Loaf = new Character();
+        Character Lelouche = new Character();
+        Character Matron = new Character();
+        Character chumbucket = new Character();
+        Character Franz = new Character();
+        Character Downs = new Character();
+        Character Miller = new Character();
+        Character applejack = new Character();
+        Character hicha = new Character();
+        Character chainsoar = new Character();
+        Character Freeza = new Character();
+        Character clarkkent = new Character();
+        Character Pacifico = new Character();
+        Character Jada = new Character();
 
-        Character Loaf = new Character(
-            "Trolliosis",
-            cA
-            );
 
-        Character Lelouche = new Character(
-            "rejected",
-            cA
-            );
+
 
         List<Character> allCharacters = new List<Character>();
         allCharacters.Add(Populus);
         allCharacters.Add(Loaf);
         allCharacters.Add(Lelouche);
 
+        // Manual Entry.
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+        Populus.Name.Add("Populus");
+        Populus.Name.Add("Ugodatwayigohome");
+        Populus.Name.Add("Jennifer");
+        Populus.Guild = cA;
+        Loaf.Name.Add("Trolliosis");
+        Lelouche.Name.Add("rejected");
+        Matron.Name.Add("MatronDeWinter");
+        chumbucket.Name.Add("chumbucket");
+        Franz.Name.Add("");
+        Downs.Name.Add("Downs");
+        Miller.Name.Add("Lebron James");
+        applejack.Name.Add("");
+        hicha.Name.Add("");
+        chainsoar.Name.Add("");
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+
+
         Character.forEachCharacter(allCharacters);
 
-        Console.WriteLine("End of Character.");
+        //Console.WriteLine("End of Character.");
 
         // End of Character.
 
@@ -117,19 +135,32 @@ public class MainMethod
             DateOnly.Parse("08-22-2022"),
             DateOnly.Parse("01-01-2023")
             );
+        Permit SP5134 = new Permit(
+            "Sheep",
+            "N/A",
+            Jada,
+            hicha,
+            DateOnly.Parse("04-17-2010"),
+            DateOnly.Parse("")
+            );
 
-        List<Permit> allPermits = new List<Permit>(); // Need to convert into List<Permit>.
+        List<Permit> allPermits = new List<Permit>();
         allPermits.Add(LoafTableBarrier);
+        allPermits.Add(SP5134);
+
 
         Permit.forEachPermit(allPermits);
 
-        Console.WriteLine("End of Permits.");
+        //Console.WriteLine("End of Permits.");
 
         // End of Permits.
 
+        // Shenanigans starts here.
+        //Guild.printAllGuilds(allGuilds);
+        //Character.printAllNicks(allCharacters);
+        //Permit.printAllPermits(allPermits);
 
-        Guild.printAllGuilds(allGuilds);
-        Character.printAllChars(allCharacters);
-
+        //Character.printAllCharacters(allCharacters);
+        // End of Shenanigans.
     }
 }

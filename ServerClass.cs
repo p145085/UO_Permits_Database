@@ -47,18 +47,17 @@ namespace UO_Permits_Database
                 }
                 string url = MainMethod.fullPath + "servers.json";
                 string serialized = JsonConvert.SerializeObject(server, Formatting.Indented);
-                serialized = serialized + "\n";
 
                 //Console.WriteLine(guild.ToString());
 
                 if (!File.Exists(url)) // If file NOT found.
                 {
-                    Console.WriteLine("No previous file found, continuing with creation.");
+                    Console.WriteLine("First snapshot created at: " + DateTime.Now);
                     File.WriteAllText(url, serialized);
                 }
                 else if (File.Exists(url)) // If file found.
                 {
-                    Console.WriteLine("Previous file found, appending current data.");
+                    Console.WriteLine("Snapshot created at: " + DateTime.Now);
                     File.AppendAllText(url, serialized);
                 }
             }

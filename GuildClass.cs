@@ -10,7 +10,10 @@ namespace UO_Permits_Database
         public string? Tag { get; set; } // Tag of Guild. (i.e "[cA]").
         public List<Character>? Members { get; set; } // List of characters.
 
-
+        public Guild()
+        {
+            this.Id = UtilityClass.createUUID();
+        }
         public Guild(string Name, string Tag)
         {
             this.Id = UtilityClass.createUUID();
@@ -54,17 +57,16 @@ namespace UO_Permits_Database
                 }
                 string url = MainMethod.fullPath + "guilds.json";
                 string serialized = JsonConvert.SerializeObject(guild, Formatting.Indented);
-                serialized = serialized + "\n";
                 //Console.WriteLine(guild.ToString());
 
                 if (!File.Exists(url)) // If file NOT found.
                 {
-                    Console.WriteLine("No previous file found, continuing with creation.");
+                    Console.WriteLine("First snapshot created at: " + DateTime.Now);
                     File.WriteAllText(url, serialized);
                 }
                 else if (File.Exists(url)) // If file found.
                 {
-                    Console.WriteLine("Previous file found, appending current data.");
+                    Console.WriteLine("Snapshot created at: " + DateTime.Now);
                     File.AppendAllText(url, serialized);
                 }
             }
