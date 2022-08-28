@@ -1,30 +1,39 @@
-ID: d72dcd1a-833c-49b0-b34e-94cbf85e3ce3
-Name: Populus
-Guild: ID: 50c891bb-e598-4023-bcce-ff48dce0052e
-Name: chumbucket & Associates
-Tag: cA
-Members: 
-
-Permits: 
-Template: 
-isRedNotBlue: 
-ID: 1d9830ee-1c16-4d40-bd2b-37da5ea0e13b
-Name: Trolliosis
-Guild: ID: 50c891bb-e598-4023-bcce-ff48dce0052e
-Name: chumbucket & Associates
-Tag: cA
-Members: 
-
-Permits: 
-Template: 
-isRedNotBlue: 
-ID: da2ecafe-75dd-4dce-bf7e-04b58d22b05b
-Name: rejected
-Guild: ID: 50c891bb-e598-4023-bcce-ff48dce0052e
-Name: chumbucket & Associates
-Tag: cA
-Members: 
-
-Permits: 
-Template: 
-isRedNotBlue: 
+{
+  "Id": "00ae9cd6-5533-4b56-a4fa-d40a2eaf1f61",
+  "Name": "Populus",
+  "Guild": {
+    "Id": "12914f47-ef35-416c-a0ad-3003a6556f93",
+    "Name": "chumbucket & Associates",
+    "Tag": "cA",
+    "Members": null
+  },
+  "Permits": null,
+  "Template": null,
+  "isRedNotBlue": null
+}
+{
+  "Id": "22a0779a-9a1a-4c3e-b58a-1d6ca4f6b5e9",
+  "Name": "Trolliosis",
+  "Guild": {
+    "Id": "12914f47-ef35-416c-a0ad-3003a6556f93",
+    "Name": "chumbucket & Associates",
+    "Tag": "cA",
+    "Members": null
+  },
+  "Permits": null,
+  "Template": null,
+  "isRedNotBlue": null
+}
+{
+  "Id": "7f62b4ba-2e2a-4891-8d25-2e43512389de",
+  "Name": "rejected",
+  "Guild": {
+    "Id": "12914f47-ef35-416c-a0ad-3003a6556f93",
+    "Name": "chumbucket & Associates",
+    "Tag": "cA",
+    "Members": null
+  },
+  "Permits": null,
+  "Template": null,
+  "isRedNotBlue": null
+}

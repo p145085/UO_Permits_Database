@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using UO_Permits_Database;
 
 namespace UO_Permits_Database
 {
@@ -13,11 +15,11 @@ namespace UO_Permits_Database
         public string? ExpansionRuleset { get; set; } // (i.e "T2A", "UOR", "AoS").
         public DateOnly? ShardLaunch { get; set; } // Date the server launched.
 
-        public Server(string Name, string Abbr, string WebURL, string ForumsURL, string DiscordURL, string ExpRules, DateOnly? shardLaunch)
+        public Server(string Name, string Abbreviation, string WebURL, string ForumsURL, string DiscordURL, string ExpRules, DateOnly? shardLaunch)
         {
             this.Id = UtilityClass.createUUID();
             this.Name = Name;
-            this.Abbreviation = Abbr;
+            this.Abbreviation = Abbreviation;
             this.WebsiteURL = WebURL;
             this.ForumsURL = ForumsURL;
             this.DiscordURL = DiscordURL;
@@ -35,5 +37,31 @@ namespace UO_Permits_Database
                     + "ShardLaunch: " + this.ShardLaunch + "\n";
         }
 
+        public static void forEachServer(List<Server> allServers)
+        {
+            foreach (Server server in allServers)
+            {
+                if (server.Equals(null))
+                {
+                    throw new InvalidOperationException("selected server was null.");
+                }
+                string url = MainMethod.fullPath + "servers.json";
+                string serialized = JsonConvert.SerializeObject(server, Formatting.Indented);
+                serialized = serialized + "\n";
+
+                //Console.WriteLine(guild.ToString());
+
+                if (!File.Exists(url)) // If file NOT found.
+                {
+                    Console.WriteLine("No previous file found, continuing with creation.");
+                    File.WriteAllText(url, serialized);
+                }
+                else if (File.Exists(url)) // If file found.
+                {
+                    Console.WriteLine("Previous file found, appending current data.");
+                    File.AppendAllText(url, serialized);
+                }
+            }
+        }
     }
 }

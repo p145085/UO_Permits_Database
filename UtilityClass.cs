@@ -24,6 +24,14 @@ public class UtilityClass
 		}
 	}
 
+    static public void printGuildsList(List<Guild> allGuildsList)
+	{
+		foreach (Guild guild in allGuildsList)
+		{
+			Console.WriteLine(guild.Name);
+		}
+	}
+
 	public UtilityClass()
 	{
 	}

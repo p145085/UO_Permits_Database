@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -14,8 +15,12 @@ namespace UO_Permits_Database;
 // Webpage with login functionality for authorized associates to CRUD manage the database.
 public class MainMethod
 {
+    public const string fullPath = "C:\\Users\\emila\\source\\repos\\UO_Permits_Database\\";
+
     static void Main(string[] args)
     {
+        string fullPath = MainMethod.fullPath;
+
         Server UOSA = new Server(
             "Ultima Online: Second Age",
             "UOSA",
@@ -51,12 +56,9 @@ public class MainMethod
         allServers.Add(UOO);
         allServers.Add(UOSA);
 
-        foreach (Server server in allServers)
-        {
-            Console.WriteLine(server.ToString());
-            File.AppendAllText(@"C:\Users\emila\source\repos\UO_Permits_Database\servers.json", server.ToString());
+        Server.forEachServer(allServers);
+       
 
-        }
         Console.WriteLine("End of Server.");
 
         // End of Server.
@@ -66,15 +68,17 @@ public class MainMethod
             "cA"
             );
 
+        Guild foo = new Guild(
+            "fooguild",
+            "foo"
+            );
+
         List<Guild> allGuilds = new List<Guild>();
         allGuilds.Add(cA);
+        allGuilds.Add(foo);
 
-        foreach (Guild guild in allGuilds)
-        {
-            Console.WriteLine(guild.ToString());
-            File.AppendAllText(@"C:\Users\emila\source\repos\UO_Permits_Database\guilds.json", guild.ToString());
+        Guild.forEachGuild(allGuilds);
 
-        }
         Console.WriteLine("End of Guild.");
 
         // End of Guild.
@@ -99,12 +103,8 @@ public class MainMethod
         allCharacters.Add(Loaf);
         allCharacters.Add(Lelouche);
 
-        foreach (Character character in allCharacters)
-        {
-            Console.WriteLine(character.ToString());
-            File.AppendAllText(@"C:\Users\emila\source\repos\UO_Permits_Database\characters.json", character.ToString());
+        Character.forEachCharacter(allCharacters);
 
-        }
         Console.WriteLine("End of Character.");
 
         // End of Character.
@@ -121,15 +121,15 @@ public class MainMethod
         List<Permit> allPermits = new List<Permit>(); // Need to convert into List<Permit>.
         allPermits.Add(LoafTableBarrier);
 
-        foreach (Permit permit in allPermits)
-        {
-            Console.WriteLine(permit.ToString());
-            File.AppendAllText(@"C:\Users\emila\source\repos\UO_Permits_Database\permits.json", permit.ToString());
+        Permit.forEachPermit(allPermits);
 
-        }
         Console.WriteLine("End of Permits.");
 
         // End of Permits.
+
+
+        Guild.printAllGuilds(allGuilds);
+        Character.printAllChars(allCharacters);
 
     }
 }

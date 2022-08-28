@@ -1,4 +1,12 @@
-ID: 50c891bb-e598-4023-bcce-ff48dce0052e
-Name: chumbucket & Associates
-Tag: cA
-Members: 
+{
+  "Id": "12914f47-ef35-416c-a0ad-3003a6556f93",
+  "Name": "chumbucket & Associates",
+  "Tag": "cA",
+  "Members": null
+}
+{
+  "Id": "9b7f6541-9600-4798-96ee-77b1e69ba4bb",
+  "Name": "fooguild",
+  "Tag": "foo",
+  "Members": null
+}

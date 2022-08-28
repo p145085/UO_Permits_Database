@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 
 namespace UO_Permits_Database
 {
@@ -39,6 +40,33 @@ namespace UO_Permits_Database
                     + "PermitIssuer: " + this.PermitIssuer + "\n"
                     + "PermitCreated: " + this.PermitCreated + "\n"
                     + "PermitExpiration: " + this.PermitExpiration + "\n";
+        }
+
+        static public void forEachPermit(List<Permit> allPermits)
+        {
+            foreach (Permit permit in allPermits)
+            {
+                if (permit.Equals(null))
+                {
+                    throw new InvalidOperationException("selected permit was null.");
+                }
+                string url = MainMethod.fullPath + "permits.json";
+                string serialized = JsonConvert.SerializeObject(permit, Formatting.Indented);
+                serialized = serialized + "\n";
+
+                //Console.WriteLine(guild.ToString());
+
+                if (!File.Exists(url)) // If file NOT found.
+                {
+                    Console.WriteLine("No previous file found, continuing with creation.");
+                    File.WriteAllText(url, serialized);
+                }
+                else if (File.Exists(url)) // If file found.
+                {
+                    Console.WriteLine("Previous file found, appending current data.");
+                    File.AppendAllText(url, serialized);
+                }
+            }
         }
     }
 }

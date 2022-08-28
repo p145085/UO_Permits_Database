@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace UO_Permits_Database
@@ -55,6 +56,43 @@ namespace UO_Permits_Database
                     + "Permits: " + this.Permits + "\n"
                     + "Template: " + this.Template + "\n"
                     + "isRedNotBlue: " + this.isRedNotBlue + "\n";
+        }
+
+        static public void printAllChars(List<Character> allCharList)
+        {
+            Console.WriteLine("**Beginning output of list of all nicks.**");
+            foreach (Character character in allCharList)
+            {
+                Console.WriteLine(character.Name);
+            }
+            Console.WriteLine("**Finished outputting list of all nicks.**");
+        }
+
+        static public void forEachCharacter(List<Character> allCharList)
+        {
+            foreach (Character character in allCharList)
+            {
+                if (character.Equals(null))
+                {
+                    throw new InvalidOperationException("selected character was null.");
+                }
+                string url = MainMethod.fullPath + "characters.json";
+                string serialized = JsonConvert.SerializeObject(character, Formatting.Indented);
+                serialized = serialized + "\n";
+
+                //Console.WriteLine(guild.ToString());
+
+                if (!File.Exists(url)) // If file NOT found.
+                {
+                    Console.WriteLine("No previous file found, continuing with creation.");
+                    File.WriteAllText(url, serialized);
+                }
+                else if (File.Exists(url)) // If file found.
+                {
+                    Console.WriteLine("Previous file found, appending current data.");
+                    File.AppendAllText(url, serialized);
+                }
+            }
         }
     }
 }
