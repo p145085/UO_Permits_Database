@@ -1,17 +1,19 @@
-﻿using Newtonsoft.Json;
+﻿using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
 namespace UO_Permits_Database
 {
     public class Character
-    {
+    { // Make better sense of the distinction between 'Account' and 'Character'.
         public string? Id { get; set; } // Identifier.
-        public List<string>? Name { get; set; } = new List<string>(); // In-game identifier.
+        public List<string>? Names { get; set; } = new List<string>(); // In-game identifier.
+        // Figure out how to link together a 'Name[i]' with a 'Template'. 
         public Guild? Guild { get; set; } // In-game guild identifier.
-        public List<Permit>? Permits { get; set; }
+        public List<Permit>? Permits { get; set; } = new List<Permit>();
         public string? Template { get; set; } // (i.e Tankmage, blacksmith, bard).
-        public Boolean? isRedNotBlue { get; set; } // True if red, false if blue.
+        public Boolean? IsRedNotBlue { get; set; } // True if red, false if blue.
 
         public Character()
         {
@@ -22,27 +24,27 @@ namespace UO_Permits_Database
             this.Id = UtilityClass.createUUID();
             this.Guild = Guild;
         }
-        public Character(List<string> Name)
+        public Character(List<string> Names)
         {
             this.Id = UtilityClass.createUUID();
-            this.Name = Name;
+            this.Names = Names;
         }
-        public Character(List<string> Name, Guild Guild)
+        public Character(List<string> Names, Guild Guild)
         {
             this.Id = UtilityClass.createUUID();
-            this.Name = Name;
+            this.Names = Names;
             this.Guild = Guild;
         }
-        public Character(List<string> Name, Guild Guild, List<Permit> Permits)
+        public Character(List<string> Names, Guild Guild, List<Permit> Permits)
         {
             this.Id = UtilityClass.createUUID();
-            this.Name = Name;
+            this.Names = Names;
             this.Guild = Guild;
             this.Permits = Permits;
         }
 
         public Character(
-            List<string> Name,
+            List<string> Names,
             Guild Guild,
             List<Permit> Permits,
             string? template,
@@ -50,21 +52,21 @@ namespace UO_Permits_Database
             )
         {
             this.Id = UtilityClass.createUUID();
-            this.Name = Name;
+            this.Names = Names;
             this.Guild = Guild;
             this.Permits = Permits;
             this.Template = template;
-            this.isRedNotBlue = isRedNotBlue;
+            this.IsRedNotBlue = isRedNotBlue;
         }
 
         public override string ToString()
         {
             return "ID: " + this.Id + "\n"
-                    + "Name: " + this.Name + "\n"
+                    + "Names: " + this.Names + "\n"
                     + "Guild: " + this.Guild + "\n"
                     + "Permits: " + this.Permits + "\n"
                     + "Template: " + this.Template + "\n"
-                    + "isRedNotBlue: " + this.isRedNotBlue + "\n";
+                    + "IsRedNotBlue: " + this.IsRedNotBlue + "\n";
         }
         static public void printAllCharacters(List<Character> allCharList)
         { // Find a way to print the object name.
@@ -75,15 +77,15 @@ namespace UO_Permits_Database
             Console.WriteLine("**Beginning output of list of all nicks.**");
             foreach (Character character in allCharList)
             {
-                for (var i = 0; i < character.Name.Count; i++)
+                for (var i = 0; i < character.Names.Count; i++)
                 {
-                    Console.WriteLine(character.Name[i].ToString());
+                    Console.WriteLine(character.Names[i].ToString());
                 }
             }
             Console.WriteLine("**Finished outputting list of all nicks.**");
         }
 
-        static public void forEachCharacter(List<Character> allCharList)
+        static public void forEachCharacterSerialize(List<Character> allCharList)
         {
             foreach (Character character in allCharList)
             {
@@ -108,5 +110,8 @@ namespace UO_Permits_Database
                 }
             }
         }
+
+        
+
     }
 }

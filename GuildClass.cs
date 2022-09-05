@@ -6,9 +6,11 @@ namespace UO_Permits_Database
     public class Guild
     {
         public string Id { get; set; }
-        public string? Name { get; set; } // Name of Guild. (i.e "chumbucket & Associates").
+        public string? Name { get; set; } // Names of Guild. (i.e "chumbucket & Associates").
         public string? Tag { get; set; } // Tag of Guild. (i.e "[cA]").
-        public List<Character>? Members { get; set; } // List of characters.
+        public List<Character>? Members { get; set; } = new List<Character>();// List of characters.
+        public List<int[][]>? GuildHouseLocation { get; set; } = new List<int[][]>(); // X and Y coordinates.
+        public Server? GuildHouseServer { get; set; } // Assign what server house is on.
 
         public Guild()
         {
@@ -31,9 +33,12 @@ namespace UO_Permits_Database
         public override string ToString()
         {
             return "ID: " + this.Id + "\n"
-                    + "Name: " + this.Name + "\n"
+                    + "Names: " + this.Name + "\n"
                     + "Tag: " + this.Tag + "\n"
-                    + "Members: " + this.Members + "\n";
+                    + "Members: " + this.Members + "\n"
+                    + "Guild-house location: " + this.GuildHouseLocation + "\n"
+                    + "Guild-house server: " + this.GuildHouseServer + "\n"
+                    ;
         }
 
         static public void printAllGuilds(List<Guild> allGuildsList)

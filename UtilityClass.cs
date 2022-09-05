@@ -1,9 +1,11 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Reflection;
 
 namespace UO_Permits_Database;
 public class UtilityClass
 {
+
 	static public string createUUID()
 	{
 

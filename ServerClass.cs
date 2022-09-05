@@ -29,7 +29,7 @@ namespace UO_Permits_Database
         public override string ToString()
         {
             return "ID: " + this.Id + "\n"
-                    + "Name: " + this.Name + "\n"
+                    + "Names: " + this.Name + "\n"
                     + "Abbreviation: " + this.Abbreviation + "\n"
                     + "Website: " + this.WebsiteURL + "\n"
                     + "Forums: " + this.ForumsURL + "\n"
