@@ -21,7 +21,7 @@ public class MainMethod
 
     static void Main(string[] args)
     {
-        string fullPath = MainMethod.fullPath;
+        //string fullPath = MainMethod.fullPath;
 
         Server UOSA = new Server(
             "Ultima Online: Second Age",
@@ -32,7 +32,6 @@ public class MainMethod
             "T2A",
             DateOnly.Parse("01-01-2007") // Unconfirmed.
             );
-
         Server UOO = new Server(
             "Ultima Online: Outlands",
             "UOO",
@@ -42,7 +41,6 @@ public class MainMethod
             "Custom",
             DateOnly.Parse("10-01-2018") // Unconfirmed.
             );
-
         Server UOR = new Server(
             "Ultima Online: Renaissance",
             "UOR",
@@ -57,11 +55,7 @@ public class MainMethod
         allServers.Add(UOR);
         allServers.Add(UOO);
         allServers.Add(UOSA);
-
         Server.forEachServer(allServers);
-
-        //Console.WriteLine("End of Server.");
-
         // End of Server.
 
         Guild cA = new Guild(
@@ -73,11 +67,7 @@ public class MainMethod
         List<Guild> allGuilds = new List<Guild>();
         allGuilds.Add(cA);
         allGuilds.Add(foo);
-
         Guild.forEachGuild(allGuilds);
-
-        //Console.WriteLine("End of Guild.");
-
         // End of Guild.
 
         Character Populus = new Character();
@@ -96,16 +86,13 @@ public class MainMethod
         Character Pacifico = new Character();
         Character Jada = new Character();
 
-
-
-
         List<Character> allCharacters = new List<Character>();
         allCharacters.Add(Populus);
         allCharacters.Add(Loaf);
         allCharacters.Add(Lelouche);
 
         // Manual Entry.
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
+        #pragma warning disable CS8602 // Dereference of a possibly null reference.
         Populus.Names.Add("Populus");
         Populus.Names.Add("Ugodatwayigohome");
         Populus.Names.Add("Jennifer");
@@ -120,19 +107,14 @@ public class MainMethod
         applejack.Names.Add("");
         hicha.Names.Add("");
         chainsoar.Names.Add("");
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
+        #pragma warning restore CS8602 // Dereference of a possibly null reference.
+        #pragma warning disable CS8602 // Dereference of a possibly null reference.
         cA.Members.Add(Populus);
         cA.Members.Add(Loaf);
         cA.Members.Add(Lelouche);
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
-
-
+        #pragma warning restore CS8602 // Dereference of a possibly null reference.
 
         Character.forEachCharacterSerialize(allCharacters);
-
-        //Console.WriteLine("End of Character.");
-
         // End of Character.
 
         Permit LoafTableBarrier = new Permit(
@@ -155,12 +137,7 @@ public class MainMethod
         List<Permit> allPermits = new List<Permit>();
         allPermits.Add(LoafTableBarrier);
         allPermits.Add(SP5134);
-
-
         Permit.forEachPermit(allPermits);
-
-        //Console.WriteLine("End of Permits.");
-
         // End of Permits.
 
         // Shenanigans starts here.

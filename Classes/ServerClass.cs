@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace UO_Permits_Database.Classes
+namespace UO_Permits_Database
 {
     public class Server
     {

@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
-namespace UO_Permits_Database.Classes
+namespace UO_Permits_Database
 {
     public class Character
     { // Make better sense of the distinction between 'Account' and 'Character'.
@@ -27,18 +27,18 @@ namespace UO_Permits_Database.Classes
         public Character(List<string> Names)
         {
             this.Id = UtilityClass.createUUID();
-            this.Name = Name;
+            this.Names = Names;
         }
         public Character(List<string> Names, Guild Guild)
         {
             this.Id = UtilityClass.createUUID();
-            this.Name = Name;
+            this.Names = Names;
             this.Guild = Guild;
         }
         public Character(List<string> Names, Guild Guild, List<Permit> Permits)
         {
             this.Id = UtilityClass.createUUID();
-            this.Name = Name;
+            this.Names = Names;
             this.Guild = Guild;
             this.Permits = Permits;
         }
@@ -52,7 +52,7 @@ namespace UO_Permits_Database.Classes
             )
         {
             this.Id = UtilityClass.createUUID();
-            this.Name = Name;
+            this.Names = Names;
             this.Guild = Guild;
             this.Permits = Permits;
             this.Template = template;
@@ -62,7 +62,7 @@ namespace UO_Permits_Database.Classes
         public override string ToString()
         {
             return "ID: " + this.Id + "\n"
-                    + "Name: " + this.Name + "\n"
+                    + "Name: " + this.Names + "\n"
                     + "Guild: " + this.Guild + "\n"
                     + "Permits: " + this.Permits + "\n"
                     + "Template: " + this.Template + "\n"
@@ -77,10 +77,12 @@ namespace UO_Permits_Database.Classes
             Console.WriteLine("**Beginning output of list of all nicks.**");
             foreach (Character character in allCharList)
             {
+                #pragma warning disable CS8602 // Dereference of a possibly null reference.
                 for (var i = 0; i < character.Names.Count; i++)
                 {
                     Console.WriteLine(character.Names[i].ToString());
                 }
+                #pragma warning restore CS8602 // Dereference of a possibly null reference.
             }
             Console.WriteLine("**Finished outputting list of all nicks.**");
         }
