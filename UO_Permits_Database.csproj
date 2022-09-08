@@ -13,7 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="data\storage\" />
     <Folder Include="json\" />
   </ItemGroup>
 
