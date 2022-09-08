@@ -27,13 +27,13 @@ namespace UO_Permits_Database.Classes
 
         public override string ToString()
         {
-            return "ID: " + Id + "\n"
-                    + "Name: " + Name + "\n"
-                    + "Abbreviation: " + Abbreviation + "\n"
-                    + "Website: " + WebsiteURL + "\n"
-                    + "Forums: " + ForumsURL + "\n"
-                    + "Discord: " + DiscordURL + "\n"
-                    + "ShardLaunch: " + ShardLaunch + "\n";
+            return "ID: " + this.Id + "\n"
+                    + "Names: " + this.Name + "\n"
+                    + "Abbreviation: " + this.Abbreviation + "\n"
+                    + "Website: " + this.WebsiteURL + "\n"
+                    + "Forums: " + this.ForumsURL + "\n"
+                    + "Discord: " + this.DiscordURL + "\n"
+                    + "ShardLaunch: " + this.ShardLaunch + "\n";
         }
 
         public static void forEachServer(List<Server> allServers)

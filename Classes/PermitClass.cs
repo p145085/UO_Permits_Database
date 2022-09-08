@@ -8,16 +8,20 @@ namespace UO_Permits_Database.Classes
         public string Id { get; set; }
         public string? Type { get; set; } // Issuer-written type of permit. (i.e "Sheep-shearing", "Farming in Deceit").
         public string? Description { get; set; } // Issuer-written message.
-        public Character? PermitHolder { get; set; } // Single Player.
-        public Character? PermitIssuer { get; set; } // Single Player.
-        public DateOnly PermitCreated { get; set; } = DateOnly.FromDateTime(DateTime.Now); // Set to DateTime.Now;
-        public DateOnly PermitExpiration { get; set; } // Set to date of choice.
+        public Character? PermitHolder { get; set; } // Single Account.
+        public Guild? PermitHolderGuild { get; set; } // If guild purchases permit, not player.
+        public Character? PermitIssuer { get; set; } // Single Account.
+        public List<Character>? PermitIssuerCollaborative { get; set; } = new List<Character>();
+        public DateOnly? PermitCreated { get; set; } = DateOnly.FromDateTime(DateTime.Now); // Set to DateTime.Now;
+        public DateOnly? PermitExpiration { get; set; } = DateOnly.FromDateTime(DateTime.Now.AddMonths(1)); // Default: 1 month. Use set for custom date.
 
         public Permit(
             string Type,
             string Description,
             Character PermitHolder,
+            Guild PermitHolderGuild,
             Character PermitIssuer,
+            List<Character> PermitIssuerCollaborative,
             DateOnly PermitCreated,
             DateOnly PermitExpiration
             )
@@ -26,20 +30,24 @@ namespace UO_Permits_Database.Classes
             this.Type = Type;
             this.Description = Description;
             this.PermitHolder = PermitHolder;
+            this.PermitHolderGuild = PermitHolderGuild;
             this.PermitIssuer = PermitIssuer;
+            this.PermitIssuerCollaborative = PermitIssuerCollaborative;
             this.PermitCreated = PermitCreated;
             this.PermitExpiration = PermitExpiration;
         }
 
         public override string ToString()
         {
-            return "ID: " + Id + "\n"
-                    + "Type: " + Type + "\n"
-                    + "Description: " + Description + "\n"
-                    + "PermitHolder: " + PermitHolder + "\n"
-                    + "PermitIssuer: " + PermitIssuer + "\n"
-                    + "PermitCreated: " + PermitCreated + "\n"
-                    + "PermitExpiration: " + PermitExpiration + "\n";
+            return "ID: " + this.Id + "\n"
+                    + "Type: " + this.Type + "\n"
+                    + "Description: " + this.Description + "\n"
+                    + "PermitHolder: " + this.PermitHolder + "\n"
+                    + "PermitHolderGuild: " + this.PermitHolderGuild + "\n"
+                    + "PermitIssuerCollaboration: " + this.PermitIssuerCollaborative + "\n"
+                    + "PermitIssuer: " + this.PermitIssuer + "\n"
+                    + "PermitCreated: " + this.PermitCreated + "\n"
+                    + "PermitExpiration: " + this.PermitExpiration + "\n";
         }
 
         static public void printAllPermits(List<Permit> allPermitsList)

@@ -17,7 +17,8 @@ namespace UO_Permits_Database;
 public class MainMethod
 {
     public const string fullPath = "C:\\Users\\emila\\source\\repos\\UO_Permits_Database\\";
-    
+    public const string sqlPath = "datasource=localhost;port=3307;username=root;password=root";
+
     static void Main(string[] args)
     {
         string fullPath = MainMethod.fullPath;
@@ -105,24 +106,30 @@ public class MainMethod
 
         // Manual Entry.
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
-        Populus.Name.Add("Populus");
-        Populus.Name.Add("Ugodatwayigohome");
-        Populus.Name.Add("Jennifer");
+        Populus.Names.Add("Populus");
+        Populus.Names.Add("Ugodatwayigohome");
+        Populus.Names.Add("Jennifer");
         Populus.Guild = cA;
-        Loaf.Name.Add("Trolliosis");
-        Lelouche.Name.Add("rejected");
-        Matron.Name.Add("MatronDeWinter");
-        chumbucket.Name.Add("chumbucket");
-        Franz.Name.Add("");
-        Downs.Name.Add("Downs");
-        Miller.Name.Add("Lebron James");
-        applejack.Name.Add("");
-        hicha.Name.Add("");
-        chainsoar.Name.Add("");
+        Loaf.Names.Add("Trolliosis");
+        Lelouche.Names.Add("rejected");
+        Matron.Names.Add("MatronDeWinter");
+        chumbucket.Names.Add("chumbucket");
+        Franz.Names.Add("");
+        Downs.Names.Add("Downs");
+        Miller.Names.Add("Lebron James");
+        applejack.Names.Add("");
+        hicha.Names.Add("");
+        chainsoar.Names.Add("");
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+        cA.Members.Add(Populus);
+        cA.Members.Add(Loaf);
+        cA.Members.Add(Lelouche);
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
 
 
-        Character.forEachCharacter(allCharacters);
+
+        Character.forEachCharacterSerialize(allCharacters);
 
         //Console.WriteLine("End of Character.");
 
@@ -142,7 +149,7 @@ public class MainMethod
             Jada,
             hicha,
             DateOnly.Parse("04-17-2010"),
-            DateOnly.Parse("01-01-2023")
+            DateOnly.Parse("04-17-2050")
             );
 
         List<Permit> allPermits = new List<Permit>();
@@ -162,6 +169,8 @@ public class MainMethod
         //Permit.printAllPermits(allPermits);
 
         //Character.printAllCharacters(allCharacters);
+
+        
         // End of Shenanigans.
     }
 }
