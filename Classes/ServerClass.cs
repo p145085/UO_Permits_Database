@@ -1,8 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
-using UO_Permits_Database;
 
-namespace UO_Permits_Database
+namespace UO_Permits_Database.Classes
 {
     public class Server
     {
@@ -17,24 +16,24 @@ namespace UO_Permits_Database
 
         public Server(string Name, string Abbreviation, string WebURL, string ForumsURL, string DiscordURL, string ExpRules, DateOnly? shardLaunch)
         {
-            this.Id = UtilityClass.createUUID();
+            Id = UtilityClass.createUUID();
             this.Name = Name;
             this.Abbreviation = Abbreviation;
-            this.WebsiteURL = WebURL;
+            WebsiteURL = WebURL;
             this.ForumsURL = ForumsURL;
             this.DiscordURL = DiscordURL;
-            this.ShardLaunch = shardLaunch;
+            ShardLaunch = shardLaunch;
         }
 
         public override string ToString()
         {
-            return "ID: " + this.Id + "\n"
-                    + "Name: " + this.Name + "\n"
-                    + "Abbreviation: " + this.Abbreviation + "\n"
-                    + "Website: " + this.WebsiteURL + "\n"
-                    + "Forums: " + this.ForumsURL + "\n"
-                    + "Discord: " + this.DiscordURL + "\n"
-                    + "ShardLaunch: " + this.ShardLaunch + "\n";
+            return "ID: " + Id + "\n"
+                    + "Name: " + Name + "\n"
+                    + "Abbreviation: " + Abbreviation + "\n"
+                    + "Website: " + WebsiteURL + "\n"
+                    + "Forums: " + ForumsURL + "\n"
+                    + "Discord: " + DiscordURL + "\n"
+                    + "ShardLaunch: " + ShardLaunch + "\n";
         }
 
         public static void forEachServer(List<Server> allServers)
@@ -45,7 +44,7 @@ namespace UO_Permits_Database
                 {
                     throw new InvalidOperationException("selected server was null.");
                 }
-                string url = MainMethod.fullPath + "servers.json";
+                string url = MainMethod.fullPath + "/json/servers.json";
                 string serialized = JsonConvert.SerializeObject(server, Formatting.Indented);
 
                 //Console.WriteLine(guild.ToString());

@@ -7,6 +7,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Text.Json;
 using System.Xml.Serialization;
+using UO_Permits_Database.Classes;
 
 namespace UO_Permits_Database;
 
@@ -141,7 +142,7 @@ public class MainMethod
             Jada,
             hicha,
             DateOnly.Parse("04-17-2010"),
-            DateOnly.Parse("")
+            DateOnly.Parse("01-01-2023")
             );
 
         List<Permit> allPermits = new List<Permit>();

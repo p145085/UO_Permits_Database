@@ -1,0 +1,69 @@
+{
+  "Id": "316e68f2-338a-4e39-b0a8-d35d6cd4421c",
+  "Name": [
+    "Populus",
+    "Ugodatwayigohome",
+    "Jennifer"
+  ],
+  "Guild": {
+    "Id": "f21893a5-18db-4476-86b6-5d39d96b18a2",
+    "Name": "chumbucket & Associates",
+    "Tag": "cA",
+    "Members": null
+  },
+  "Permits": null,
+  "Template": null,
+  "isRedNotBlue": null
+}{
+  "Id": "5d9f4a43-e851-4e41-a041-8eaa9c1da022",
+  "Name": [
+    "Trolliosis"
+  ],
+  "Guild": null,
+  "Permits": null,
+  "Template": null,
+  "isRedNotBlue": null
+}{
+  "Id": "60a0569b-fe19-42a5-ae74-ff25b475c623",
+  "Name": [
+    "rejected"
+  ],
+  "Guild": null,
+  "Permits": null,
+  "Template": null,
+  "isRedNotBlue": null
+}{
+  "Id": "9ff4834f-244b-4834-bf4b-e8feda29697b",
+  "Name": [
+    "Populus",
+    "Ugodatwayigohome",
+    "Jennifer"
+  ],
+  "Guild": {
+    "Id": "12b0d265-5a19-4d54-b7a7-91417ebc15d9",
+    "Name": "chumbucket & Associates",
+    "Tag": "cA",
+    "Members": null
+  },
+  "Permits": null,
+  "Template": null,
+  "isRedNotBlue": null
+}{
+  "Id": "a488ae96-f56e-4b29-8cd0-f90ed8939b69",
+  "Name": [
+    "Trolliosis"
+  ],
+  "Guild": null,
+  "Permits": null,
+  "Template": null,
+  "isRedNotBlue": null
+}{
+  "Id": "69de60ac-e5bf-4ad9-aa3b-cbc45522fab4",
+  "Name": [
+    "rejected"
+  ],
+  "Guild": null,
+  "Permits": null,
+  "Template": null,
+  "isRedNotBlue": null
+}

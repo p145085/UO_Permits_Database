@@ -1,0 +1,97 @@
+{
+  "Id": "3d69d288-741c-4cdd-8efc-6a07d5523288",
+  "Name": "Ultima Online: Renaissance",
+  "Abbreviation": "UOR",
+  "WebsiteURL": "https://uorenaissance.com/",
+  "ForumsURL": "https://uorforum.com/",
+  "DiscordURL": "https://discord.com/invite/9JtUTdP",
+  "ExpansionRuleset": null,
+  "ShardLaunch": {
+    "Year": 2012,
+    "Month": 6,
+    "Day": 16,
+    "DayOfWeek": 6,
+    "DayOfYear": 168,
+    "DayNumber": 734669
+  }
+}{
+  "Id": "dc8c9744-480f-42e5-8cbd-b00682f86524",
+  "Name": "Ultima Online: Outlands",
+  "Abbreviation": "UOO",
+  "WebsiteURL": "https://uooutlands.com/",
+  "ForumsURL": "https://forums.uooutlands.com/index.php",
+  "DiscordURL": "https://discord.com/invite/M6pNQn2",
+  "ExpansionRuleset": null,
+  "ShardLaunch": {
+    "Year": 2018,
+    "Month": 10,
+    "Day": 1,
+    "DayOfWeek": 1,
+    "DayOfYear": 274,
+    "DayNumber": 736967
+  }
+}{
+  "Id": "a1c792db-6047-4603-afaf-405a3b2cf9c8",
+  "Name": "Ultima Online: Second Age",
+  "Abbreviation": "UOSA",
+  "WebsiteURL": "https://uosecondage.com",
+  "ForumsURL": "https://forums.uosecondage.com/",
+  "DiscordURL": "https://discord.gg/bub8b7vT",
+  "ExpansionRuleset": null,
+  "ShardLaunch": {
+    "Year": 2007,
+    "Month": 1,
+    "Day": 1,
+    "DayOfWeek": 1,
+    "DayOfYear": 1,
+    "DayNumber": 732676
+  }
+}{
+  "Id": "bd3ad83b-d667-4cfd-92ab-fd797259de5a",
+  "Name": "Ultima Online: Renaissance",
+  "Abbreviation": "UOR",
+  "WebsiteURL": "https://uorenaissance.com/",
+  "ForumsURL": "https://uorforum.com/",
+  "DiscordURL": "https://discord.com/invite/9JtUTdP",
+  "ExpansionRuleset": null,
+  "ShardLaunch": {
+    "Year": 2012,
+    "Month": 6,
+    "Day": 16,
+    "DayOfWeek": 6,
+    "DayOfYear": 168,
+    "DayNumber": 734669
+  }
+}{
+  "Id": "1a132c69-a653-4835-a907-dd29dbdafac6",
+  "Name": "Ultima Online: Outlands",
+  "Abbreviation": "UOO",
+  "WebsiteURL": "https://uooutlands.com/",
+  "ForumsURL": "https://forums.uooutlands.com/index.php",
+  "DiscordURL": "https://discord.com/invite/M6pNQn2",
+  "ExpansionRuleset": null,
+  "ShardLaunch": {
+    "Year": 2018,
+    "Month": 10,
+    "Day": 1,
+    "DayOfWeek": 1,
+    "DayOfYear": 274,
+    "DayNumber": 736967
+  }
+}{
+  "Id": "2e9d1678-444b-4e9e-9803-7377e45920f2",
+  "Name": "Ultima Online: Second Age",
+  "Abbreviation": "UOSA",
+  "WebsiteURL": "https://uosecondage.com",
+  "ForumsURL": "https://forums.uosecondage.com/",
+  "DiscordURL": "https://discord.gg/bub8b7vT",
+  "ExpansionRuleset": null,
+  "ShardLaunch": {
+    "Year": 2007,
+    "Month": 1,
+    "Day": 1,
+    "DayOfWeek": 1,
+    "DayOfYear": 1,
+    "DayNumber": 732676
+  }
+}

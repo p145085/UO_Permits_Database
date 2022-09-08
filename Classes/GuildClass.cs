@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace UO_Permits_Database
+namespace UO_Permits_Database.Classes
 {
     public class Guild
     {
@@ -12,17 +12,17 @@ namespace UO_Permits_Database
 
         public Guild()
         {
-            this.Id = UtilityClass.createUUID();
+            Id = UtilityClass.createUUID();
         }
         public Guild(string Name, string Tag)
         {
-            this.Id = UtilityClass.createUUID();
+            Id = UtilityClass.createUUID();
             this.Name = Name;
             this.Tag = Tag;
         }
         public Guild(string Name, string Tag, List<Character> Members)
         {
-            this.Id = UtilityClass.createUUID();
+            Id = UtilityClass.createUUID();
             this.Name = Name;
             this.Tag = Tag;
             this.Members = Members;
@@ -30,10 +30,10 @@ namespace UO_Permits_Database
 
         public override string ToString()
         {
-            return "ID: " + this.Id + "\n"
-                    + "Name: " + this.Name + "\n"
-                    + "Tag: " + this.Tag + "\n"
-                    + "Members: " + this.Members + "\n";
+            return "ID: " + Id + "\n"
+                    + "Name: " + Name + "\n"
+                    + "Tag: " + Tag + "\n"
+                    + "Members: " + Members + "\n";
         }
 
         static public void printAllGuilds(List<Guild> allGuildsList)
@@ -55,7 +55,7 @@ namespace UO_Permits_Database
                 {
                     throw new InvalidOperationException("selected guild was null.");
                 }
-                string url = MainMethod.fullPath + "guilds.json";
+                string url = MainMethod.fullPath + "/json/guilds.json";
                 string serialized = JsonConvert.SerializeObject(guild, Formatting.Indented);
                 //Console.WriteLine(guild.ToString());
 

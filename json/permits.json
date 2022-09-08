@@ -1,0 +1,79 @@
+{
+  "Id": "3d853772-3c42-48f9-b3e3-183e1542903c",
+  "Type": "Guildhouse Access",
+  "Description": "Loaf is allowed behind the table-barrier under supervision by appropriate guards.",
+  "PermitHolder": {
+    "Id": "a488ae96-f56e-4b29-8cd0-f90ed8939b69",
+    "Name": [
+      "Trolliosis"
+    ],
+    "Guild": null,
+    "Permits": null,
+    "Template": null,
+    "isRedNotBlue": null
+  },
+  "PermitIssuer": {
+    "Id": "69de60ac-e5bf-4ad9-aa3b-cbc45522fab4",
+    "Name": [
+      "rejected"
+    ],
+    "Guild": null,
+    "Permits": null,
+    "Template": null,
+    "isRedNotBlue": null
+  },
+  "PermitCreated": {
+    "Year": 2022,
+    "Month": 8,
+    "Day": 22,
+    "DayOfWeek": 1,
+    "DayOfYear": 234,
+    "DayNumber": 738388
+  },
+  "PermitExpiration": {
+    "Year": 2023,
+    "Month": 1,
+    "Day": 1,
+    "DayOfWeek": 0,
+    "DayOfYear": 1,
+    "DayNumber": 738520
+  }
+}{
+  "Id": "b2ea79df-ae23-4728-a8ca-d56785c7a7a5",
+  "Type": "Sheep",
+  "Description": "N/A",
+  "PermitHolder": {
+    "Id": "6209ef74-6543-43b8-a87a-3c547ee7da71",
+    "Name": [],
+    "Guild": null,
+    "Permits": null,
+    "Template": null,
+    "isRedNotBlue": null
+  },
+  "PermitIssuer": {
+    "Id": "cfb74785-7938-4a11-9b4a-cfc5f6959bdd",
+    "Name": [
+      ""
+    ],
+    "Guild": null,
+    "Permits": null,
+    "Template": null,
+    "isRedNotBlue": null
+  },
+  "PermitCreated": {
+    "Year": 2010,
+    "Month": 4,
+    "Day": 17,
+    "DayOfWeek": 6,
+    "DayOfYear": 107,
+    "DayNumber": 733878
+  },
+  "PermitExpiration": {
+    "Year": 2023,
+    "Month": 1,
+    "Day": 1,
+    "DayOfWeek": 0,
+    "DayOfYear": 1,
+    "DayNumber": 738520
+  }
+}
