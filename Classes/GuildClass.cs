@@ -8,7 +8,7 @@ namespace UO_Permits_Database
         public string Id { get; set; }
         public string? Name { get; set; } // Names of Guild. (i.e "chumbucket & Associates").
         public string? Tag { get; set; } // Tag of Guild. (i.e "[cA]").
-        public List<Character>? Members { get; set; } = new List<Character>();// List of characters.
+        //public List<Character>? Members { get; set; } = new List<Character>(); // List of characters.
         public List<int[][]>? GuildHouseLocation { get; set; } = new List<int[][]>(); // X and Y coordinates.
         public Server? GuildHouseServer { get; set; } // Assign what server house is on.
 
@@ -27,7 +27,7 @@ namespace UO_Permits_Database
             Id = UtilityClass.createUUID();
             this.Name = Name;
             this.Tag = Tag;
-            this.Members = Members;
+            //this.Members = Members;
         }
 
         public override string ToString()
@@ -35,7 +35,7 @@ namespace UO_Permits_Database
             return "ID: " + this.Id + "\n"
                     + "Names: " + this.Name + "\n"
                     + "Tag: " + this.Tag + "\n"
-                    + "Members: " + this.Members + "\n"
+                    //+ "Members: " + this.Members + "\n"
                     + "Guild-house location: " + this.GuildHouseLocation + "\n"
                     + "Guild-house server: " + this.GuildHouseServer + "\n"
                     ;

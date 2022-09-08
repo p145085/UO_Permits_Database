@@ -7,7 +7,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Text.Json;
 using System.Xml.Serialization;
-using UO_Permits_Database.Classes;
+using UO_Permits_Database;
 
 namespace UO_Permits_Database;
 
@@ -109,9 +109,9 @@ public class MainMethod
         chainsoar.Names.Add("");
         #pragma warning restore CS8602 // Dereference of a possibly null reference.
         #pragma warning disable CS8602 // Dereference of a possibly null reference.
-        cA.Members.Add(Populus);
-        cA.Members.Add(Loaf);
-        cA.Members.Add(Lelouche);
+        //cA.Members.Add(Populus);
+        //cA.Members.Add(Loaf);
+        //cA.Members.Add(Lelouche);
         #pragma warning restore CS8602 // Dereference of a possibly null reference.
 
         Character.forEachCharacterSerialize(allCharacters);

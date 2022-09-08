@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace UO_Permits_Database.Classes
+namespace UO_Permits_Database
 {
     public class Permit
     {
@@ -33,6 +33,23 @@ namespace UO_Permits_Database.Classes
             this.PermitHolderGuild = PermitHolderGuild;
             this.PermitIssuer = PermitIssuer;
             this.PermitIssuerCollaborative = PermitIssuerCollaborative;
+            this.PermitCreated = PermitCreated;
+            this.PermitExpiration = PermitExpiration;
+        }
+        public Permit(
+            string Type,
+            string Description,
+            Character PermitHolder,
+            Character PermitIssuer,
+            DateOnly PermitCreated,
+            DateOnly PermitExpiration
+            )
+        {
+            Id = UtilityClass.createUUID();
+            this.Type = Type;
+            this.Description = Description;
+            this.PermitHolder = PermitHolder;
+            this.PermitIssuer = PermitIssuer;
             this.PermitCreated = PermitCreated;
             this.PermitExpiration = PermitExpiration;
         }

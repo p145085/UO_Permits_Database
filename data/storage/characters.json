@@ -1,0 +1,36 @@
+{
+  "Id": "1b00b17e-d714-4087-a68c-9c4a901b3311",
+  "Names": [
+    "Populus",
+    "Ugodatwayigohome",
+    "Jennifer"
+  ],
+  "Guild": {
+    "Id": "0150a473-d254-4b5f-b840-64153c0abe59",
+    "Name": "chumbucket & Associates",
+    "Tag": "cA",
+    "GuildHouseLocation": [],
+    "GuildHouseServer": null
+  },
+  "Permits": [],
+  "Template": null,
+  "isRedNotBlue": null
+}{
+  "Id": "e83bdc5a-c197-4d77-b744-e84b21fa5861",
+  "Names": [
+    "Trolliosis"
+  ],
+  "Guild": null,
+  "Permits": [],
+  "Template": null,
+  "isRedNotBlue": null
+}{
+  "Id": "eac72827-daac-4274-b82a-97b4bbcbd1a2",
+  "Names": [
+    "rejected"
+  ],
+  "Guild": null,
+  "Permits": [],
+  "Template": null,
+  "isRedNotBlue": null
+}
